@@ -1,1 +1,162 @@
-{"name":"theme created by powerbi.tips https://themes.powerbi.tips","dataColors":["#009776","#004646","#FFFFFF","#000000","#E0E0E4","#BCBFC1","#006AD3","#081C61"],"visualStyles":{"*":{"*":{"*":[{"axisStyle":"showTitleOnly","fontFamily":"Arial","fontSize":"10","labelColor":{"solid":{"color":{"expr":{"ThemeDataColor":{"ColorId":1,"Percent":0}}}}},"titleFontSize":"10","titleWrap":true}],"dataPoint":[{"defaultColor":{"solid":{"color":{"expr":{"ThemeDataColor":{"ColorId":2,"Percent":0}}}}}}],"title":[{"show":true,"titleWrap":true,"fontColor":{"solid":{"color":{"expr":{"ThemeDataColor":{"ColorId":1,"Percent":0}}}}},"alignment":"Center","fontSize":"11"}],"valueAxis":[{"show":true,"labelColor":{"solid":{"color":{"expr":{"ThemeDataColor":{"ColorId":1,"Percent":0}}}}},"titleColor":{"solid":{"color":{"expr":{"ThemeDataColor":{"ColorId":1,"Percent":0}}}}},"titleFontSize":"10","fontSize":"9"}],"categoryAxis":[{"show":true,"fontSize":"9","labelColor":{"solid":{"color":{"expr":{"ThemeDataColor":{"ColorId":1,"Percent":0}}}}},"titleColor":{"solid":{"color":{"expr":{"ThemeDataColor":{"ColorId":1,"Percent":0}}}}},"titleFontSize":"10"}],"legend":[{"show":true,"labelColor":{"solid":{"color":{"expr":{"ThemeDataColor":{"ColorId":1,"Percent":0}}}}},"fontSize":"10","position":"Top"}],"general":[{"responsive":false}]}}}}
+{
+    "name": "theme created by powerbi.tips https://themes.powerbi.tips",
+    "dataColors": [
+        "#009776",
+        "#004646",
+        "#FFFFFF",
+        "#000000",
+        "#E0E0E4",
+        "#BCBFC1",
+        "#006AD3",
+        "#081C61"
+    ],
+    "visualStyles": {
+        "*": {
+            "*": {
+                "*": [
+                    {
+                        "axisStyle": "showTitleOnly",
+                        "fontFamily": "Arial",
+                        "fontSize": "10",
+                        "labelColor": {
+                            "solid": {
+                                "color": {
+                                    "expr": {
+                                        "ThemeDataColor": {
+                                            "ColorId": 1,
+                                            "Percent": 0
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "titleFontSize": "10",
+                        "titleWrap": true
+                    }
+                ],
+                "dataPoint": [
+                    {
+                        "defaultColor": {
+                            "solid": {
+                                "color": {
+                                    "expr": {
+                                        "ThemeDataColor": {
+                                            "ColorId": 2,
+                                            "Percent": 0
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+                "title": [
+                    {
+                        "show": true,
+                        "titleWrap": true,
+                        "fontColor": {
+                            "solid": {
+                                "color": {
+                                    "expr": {
+                                        "ThemeDataColor": {
+                                            "ColorId": 1,
+                                            "Percent": 0
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "alignment": "Center",
+                        "fontSize": "11"
+                    }
+                ],
+                "valueAxis": [
+                    {
+                        "show": true,
+                        "labelColor": {
+                            "solid": {
+                                "color": {
+                                    "expr": {
+                                        "ThemeDataColor": {
+                                            "ColorId": 1,
+                                            "Percent": 0
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "titleColor": {
+                            "solid": {
+                                "color": {
+                                    "expr": {
+                                        "ThemeDataColor": {
+                                            "ColorId": 1,
+                                            "Percent": 0
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "titleFontSize": "10",
+                        "fontSize": "9"
+                    }
+                ],
+                "categoryAxis": [
+                    {
+                        "show": true,
+                        "fontSize": "9",
+                        "labelColor": {
+                            "solid": {
+                                "color": {
+                                    "expr": {
+                                        "ThemeDataColor": {
+                                            "ColorId": 1,
+                                            "Percent": 0
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "titleColor": {
+                            "solid": {
+                                "color": {
+                                    "expr": {
+                                        "ThemeDataColor": {
+                                            "ColorId": 1,
+                                            "Percent": 0
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "titleFontSize": "10"
+                    }
+                ],
+                "legend": [
+                    {
+                        "show": true,
+                        "labelColor": {
+                            "solid": {
+                                "color": {
+                                    "expr": {
+                                        "ThemeDataColor": {
+                                            "ColorId": 1,
+                                            "Percent": 0
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "fontSize": "10",
+                        "position": "Top"
+                    }
+                ],
+                "general": [
+                    {
+                        "responsive": false
+                    }
+                ]
+            }
+        }
+    }
+}
