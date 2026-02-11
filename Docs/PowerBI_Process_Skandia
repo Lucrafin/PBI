@@ -1,0 +1,125 @@
+# Process för rapportskapande i Power BI (PBIP) – Detaljerad Dokumentation
+
+## 1. Spara projekt som PBIP
+Det första steget i rapportutvecklingen är att spara projektet i PBIP‑format (Power BI Project). PBIP möjliggör strukturerad utveckling, versionshantering och samarbete i team.
+
+### Syftet med PBIP‑formatet
+- Möjliggör versionshantering via Git eller andra system.
+- All logik och struktur (modell, rapport, metadata) lagras i textbaserade filer.
+- Underlättar code reviews, branches, pull requests och DevOps‑flöden.
+- Gör det lättare att jämföra versioner och återställa tidigare tillstånd.
+
+### Steg för att spara som PBIP
+- Öppna rapporten i Power BI Desktop.
+- Välj: File → Save as → Power BI Project (.pbip)
+- Kontrollera filstrukturen (t.ex. definition.pbir, report, model).
+- Lägg till projektet i ett Git‑repository.
+
+### Hantera PBIP‑strukturen i versionskontroll
+- Undvik att ignorera metadatafiler i .gitignore.
+- Säkerställ att model‑filer versioneras.
+- Följ branch‑strategi (t.ex. feature/ och main/master).
+
+## 2. Publicera till valt workspace
+När projektet är redo ska rapport och dataset publiceras till organisationens Power BI‑miljö.
+
+### Identifiera rätt workspace
+- Bestäms av teamets riktlinjer (prod/test/dev).
+- Säkerställ korrekta behörigheter.
+
+### Publiceringssteg
+- I Power BI Desktop: Publish → Select workspace.
+- Alternativt via Power BI CLI eller DevOps pipeline.
+
+### Resultat av första publiceringen
+- Ett nytt dataset skapas i workspace.
+- En rapport kopplad till datasetet publiceras.
+- RLS/OLS‑inställningar konfigurera i tjänsten.
+
+## 3. Konfigurera incremental refresh
+Incremental refresh används för stora dataset som ska uppdateras delvis istället för full omladdning.
+
+### Krav och förutsättningar
+- RangeStart och RangeEnd‑parametrar.
+- Datakälla måste stödja query folding.
+- Premium/PPU/Fabric krävs.
+
+### Steg för konfiguration
+- Skapa parametrar i Desktop.
+- Gå till modellvy → Tabell → Incremental refresh policy.
+- Definiera lagrings- och uppdateringsintervall.
+- Valfritt: aktivera real‑time DirectQuery.
+
+### Första publiceringen
+- Full historical refresh görs första gången.
+- Partitioner skapas därefter automatiskt.
+
+### Partitioner efter publicering
+- Power BI hanterar skapande och utfasning.
+- Utvecklare behöver endast verifiera refresh‑status.
+
+## 4. Dokumentera refresh‑rutiner
+Efter publicering måste rutiner dokumenteras för att säkerställa uppdaterad data.
+
+### Schemalagd refresh
+- Konfigureras i tjänsten: Dataset → Settings → Scheduled refresh.
+- Ange frekvens och credentials.
+
+### Manuell refresh
+- Triggas via tjänsten.
+- Används för testning/felsökning.
+
+### Impact av incremental refresh
+- Endast nya partitioner uppdateras.
+- Förkortade refresh‑tider.
+
+### Beroenden
+- Gateway‑anslutningar.
+- Credentials/servicekonton.
+- API‑begränsningar.
+
+## 5. Skapa rapporter från publicerad modell
+När datasetet publicerats kan nya rapporter byggas ovanpå samma modell.
+
+### Anslut till befintligt dataset
+- I Desktop: välj Power BI datasets.
+- Endast rapportlagret skapas, modellen är read‑only.
+
+### Bygga rapporter
+- Skapa visuals och sidor utifrån publicerad modell.
+
+### Publicering
+- Rapporter kan publiceras till samma eller andra workspaces.
+
+## 6. Uppdatera PBIP‑projektet
+Ändringar görs lokalt i PBIP‑projektet.
+
+### Lokal utveckling
+- Öppna projektet i Desktop.
+- Uppdatera modell/rapporter.
+
+### Versionshantering
+- Committa ändringar.
+- Skapa pull request.
+- Genomför code review.
+
+### Ändringar som påverkar incremental refresh
+- Kan trigga full refresh.
+- Dokumentera konsekvenser före merge.
+
+## 7. Republicera ändringar
+När ändringar är godkända ska de publiceras.
+
+### Steg
+- Publicera via Desktop eller pipeline.
+- Ersätt befintligt dataset.
+
+### Effekter
+- Dataset behåller ID.
+- Befintliga rapporter fortsätter fungera.
+
+### Validering
+- Kontrollera refresh.
+- Kontrollera modelländringar.
+- Kontrollera rapporter.
+
